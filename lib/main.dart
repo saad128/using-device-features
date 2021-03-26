@@ -19,10 +19,17 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.amber,
           primaryColor: Colors.indigo,
+          textButtonTheme: TextButtonThemeData(
+            style: ButtonStyle(
+              foregroundColor: MaterialStateProperty.resolveWith(
+                (states) => Colors.indigo,
+              ),
+            ),
+          ),
         ),
         home: PlacesListScreen(),
         routes: {
-          AddPlaceScreen.routeName : (ctx) => AddPlaceScreen(),
+          AddPlaceScreen.routeName: (ctx) => AddPlaceScreen(),
         },
       ),
     );
